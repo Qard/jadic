@@ -1,0 +1,23 @@
+{
+  "name": "jadic",
+  "version": "0.0.1",
+  "description": "A simple build tool to compile a directory full of jade templates to html files",
+  "keywords": ["build", "jade", "compile", "directory", "template", "html"],
+  "main": "index.js",
+  "author": "Stephen Belanger <admin@stephenbelanger.com>",
+  "license": "MIT",
+  "bin": {
+    "jadic": "bin/jadic"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "jade": "0.28.x",
+    "glob": "3.x",
+    "mkdirp": "*"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}

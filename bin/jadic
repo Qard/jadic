@@ -1,0 +1,44 @@
+#!/usr/bin/env node
+var jadic = require('../')
+	, optimist = require('optimist')
+
+var argv = require('optimist')
+  .options('i', {
+    alias : 'input'
+    , default : '.'
+  })
+  .options('o', {
+  	alias: 'output'
+  	, default: '.'
+  })
+  .options('l', {
+  	alias: 'locals'
+  	, default: '{}'
+  })
+  .argv
+
+var jadic = require('jadic')
+	, path = require('path')
+
+var action = jadic.build({
+	input: path.join(process.cwd(), argv.input)
+	, output: path.join(process.cwd(), argv.output)
+	, locals: JSON.parse(argv.locals)
+
+	// Default behaviour is to ignore paths that start with _
+	, fileFilter: function (file) {
+		return path.basename(file, path.extname(file)).substr(0, 1) !== '_'
+	}
+})
+
+action.on('file', function (file) {
+	console.log('Built', file)
+})
+
+action.on('done', function () {
+	console.log('Build complete')
+})
+
+action.on('error', function (err) {
+	console.error(err.message)
+})
