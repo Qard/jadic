@@ -1,4 +1,6 @@
 # Jadic
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Qard/jadic.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/Qard/jadic.png)](https://travis-ci.org/Qard/jadic)
 
 Jadic is a simple build tool to compile a directory full of jade templates to html files.
