@@ -13,8 +13,8 @@
     "test": "mocha"
   },
   "dependencies": {
-    "jade": "0.28.x",
-    "glob": "3.x",
+    "jade": "~1.11.0",
+    "glob": "^7.1.2",
     "mkdirp": "*"
   },
   "devDependencies": {
